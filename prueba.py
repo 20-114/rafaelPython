@@ -59,16 +59,17 @@ ingresos = int(input("Ingresos mensuales: "))
 educacion = (input("Nivel educacional (básico, medio o superiror): "))
 nacionalidad = (input("Nacionalidad: "))
 
-if ingresos >= tramo1_desde and ingresos < tramo1_hasta:
-    credito = credito + tramo1_credito
-elif ingresos >= tramo2_desde and ingresos < tramo2_hasta:
-    credito = credito + tramo2_credito
-elif ingresos >= tramo3_desde and ingresos < tramo3_hasta:
-    credito = credito + tramo3_credito
-else:
-    print("")
 
 if ingresos >= tramo1_desde:
+    if ingresos >= tramo1_desde and ingresos < tramo1_hasta:
+        credito = credito + tramo1_credito
+    elif ingresos >= tramo2_desde and ingresos < tramo2_hasta:
+       credito = credito + tramo2_credito
+    elif ingresos >= tramo3_desde and ingresos < tramo3_hasta:
+        credito = credito + tramo3_credito
+    else:
+        print("")
+
     if educacion == "basico":
         credito = credito * basico
     elif educacion == "medio":
@@ -86,7 +87,7 @@ if ingresos >= tramo1_desde:
     print("Puede acceder a un crédito de ", credito, " pesos.")
 
 else:
-    print("Ingresos induficientes para acceder a un credito")
+    print("Ingresos insuficientes para acceder a un credito")
 
 
 
